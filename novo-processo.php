@@ -1,11 +1,11 @@
-<div class="container py-5">
+<div class="container py-5"> <!-- Contêiner principal com padding vertical -->
     <h2 class="text-center mb-4 fw-bold text-dark" style="font-size: 1.8rem; animation: fadeIn 1s ease-in-out;">
-        <i class="bi bi-file-earmark-text-fill"></i> Cadastro de Processos
+        <i class="bi bi-file-earmark-text-fill"></i> Cadastro de Processos <!-- Título da seção com ícone -->
     </h2>
     
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center"> <!-- Centraliza o formulário na página -->
         <form action="?page=salvar" method="POST" class="p-5 border rounded shadow-lg bg-gradient" style="max-width: 450px; width: 100%;">
-            <input type="hidden" name="acao" value="cadastrar">
+            <input type="hidden" name="acao" value="cadastrar"> <!-- Campo oculto para identificar a ação -->
 
             <div class="mb-4">
                 <label for="nprocesso" class="form-label">Número do Processo</label>
@@ -45,6 +45,7 @@
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-envelope"></i></span>
                     <input type="text" name="cep" id="cep" class="form-control" placeholder="Digite o CEP" required onblur="buscarCEP()">
+                    <!-- O evento onblur chama a função buscarCEP() ao sair do campo -->
                 </div>
             </div>
 
@@ -75,22 +76,22 @@
 </div>
 
 <script>
-    function buscarCEP() {
-        const cep = document.getElementById('cep').value;
-        if (cep.length === 8) {
-            fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                .then(response => response.json())
+    function buscarCEP() { // Função para buscar o endereço a partir do CEP
+        const cep = document.getElementById('cep').value; // Obtém o valor do campo CEP
+        if (cep.length === 8) { // Verifica se o CEP tem 8 caracteres
+            fetch(`https://viacep.com.br/ws/${cep}/json/`) // Faz a requisição para a API de CEP
+                .then(response => response.json()) // Converte a resposta em JSON
                 .then(data => {
-                    if (!data.erro) {
-                        document.getElementById('rua').value = data.logradouro;
-                        document.getElementById('cidade').value = data.localidade;
+                    if (!data.erro) { // Verifica se o CEP retornou um erro
+                        document.getElementById('rua').value = data.logradouro; // Preenche o campo Rua
+                        document.getElementById('cidade').value = data.localidade; // Preenche o campo Cidade
                     } else {
-                        alert('CEP não encontrado!');
+                        alert('CEP não encontrado!'); // Exibe alerta se o CEP não foi encontrado
                     }
                 })
-                .catch(() => alert('Erro ao buscar CEP!'));
+                .catch(() => alert('Erro ao buscar CEP!')); // Exibe alerta em caso de erro na requisição
         } else {
-            alert('CEP inválido!');
+            alert('CEP inválido!'); // Exibe alerta se o CEP não é válido
         }
     }
 </script>

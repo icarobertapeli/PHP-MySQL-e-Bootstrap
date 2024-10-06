@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -24,15 +24,15 @@
 </head>
 
 <body>
-    <div class="card">
+    <div class="card"> <!-- Card para o formulário -->
         <div class="card-body">
-            <div class="d-flex align-items-center justify-content-center mb-3">
+            <div class="d-flex align-items-center justify-content-center mb-3"> <!-- Container para o título e ícone -->
                 <h3 class="mb-0">Crie a sua conta</h3>
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-vcard-fill ms-2" viewBox="0 0 16 16">
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0" />
                 </svg>
             </div>
-            <form action="cadastro.php" method="POST">
+            <form action="cadastro.php" method="POST"> <!-- Formulário para cadastro -->
                 <div class="mb-3">
                     <label for="usuario" class="form-label">Usuário</label>
                     <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Digite seu usuário" required>
