@@ -16,7 +16,7 @@ include('config.php');
 
 // Obtém os valores do formulário
 $usuario = $_POST["usuario"];
-$senha = ($_POST["senha"]);
+$senha = ($_POST["senha"]); // Preciso resolver o problema do md5
 
 // Verifica se o usuário já existe no banco de dados
 $sqlCheck = "SELECT * FROM usuarios WHERE usuario = '{$usuario}'";
